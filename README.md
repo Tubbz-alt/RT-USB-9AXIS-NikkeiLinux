@@ -68,8 +68,7 @@ zipファイルを適当な場所に解凍してファームウェア
 2.    タクトスイッチから手を離します．
 3.    mountコマンドでマウント名を調べる.(CRP DISABLEDという名前)
 
-<img src="./image/マウント場所.png" width="500">
-
+      <img src="./image/マウント場所.png" width="500">
 
 4.    mtoolsというコマンドをインストールする.
      
