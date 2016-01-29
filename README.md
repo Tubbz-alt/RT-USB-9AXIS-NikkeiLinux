@@ -45,7 +45,11 @@ USB出力IMUセンサモジュールにはもともと9軸データを取得し�
 
 ## ファームウェアの書き込み方法
 連載用のファームウェアはfirmwareフォルダ内
-「NikkeiLinux_yaw_firm.bin」になります.  
+のzipファイル内の
+「NikkeiLinux_yaw_firm.bin」になります.
+zipファイルを適当な場所に解凍してファームウェア
+のbinファイルを取り出してください.  
+
 以下, ファームウェアの書き込み方法について説明します.  
 
 ### Windows環境
@@ -60,14 +64,27 @@ USB出力IMUセンサモジュールにはもともと9軸データを取得し�
 
 ### Linux環境
 
-1.センサモジュール上のタクトスイッチを押したままUSBケーブルを接続
-このとき, モジュール上のLEDが弱く点灯します.
-2.タクトスイッチから手を離します．
-3.mountコマンドでマウント名を調べる.(CRP DISABLEDという名前)
-4.mtoolというコマンドをインストールする.
-5.sudo mdel –i マウントされている場所::/firmware.bin
-6.sudo mcopy –i マウントされている場所 新しいファイルの絶対path::/
+1.　　センサモジュール上のタクトスイッチを押したままUSBケーブルを接続. このとき, モジュール上のLEDが弱く点灯します.
+2.    タクトスイッチから手を離します．
+3.    mountコマンドでマウント名を調べる.(CRP DISABLEDという名前)
 
+<img src="./image/マウント場所.png" width="500">
+
+
+4.    mtoolsというコマンドをインストールする.
+     
+       sudo apt-get install mtools 
+
+5.    sudo mdel –i マウントされている場所 ::/firmware.bin
+
+       例 マウントされている場所が /dev/sdb だった場合
+       sudo mdel -i /dev/sdb ::/firmware.bin
+
+6.    sudo mcopy –i マウントされている場所 新しいファイルの絶対path ::/
+
+       例 マウントされている場所が /dev/sdbでダウンロードしてきたファームウェアのパスが
+       /home/hogehoge/NikkeiLinux_yaw_firm.binの場合
+       sudo mcopy -i /dev/sdb /home/hogehoge/NikkeiLinux_yaw_firm.bin ::/
 
 ## ラズベリーパイでのセンサ値の出力読み取りについて
 連載用のファームウェアの出力をラズベリーパイで
@@ -79,11 +96,12 @@ USB出力IMUセンサモジュールにはもともと9軸データを取得し�
 センサモジュールを完全に静止させてください.  
 最初の数秒間でセンサのキャリブレーションを行っています.
 
-     sudo cat /dev/ttyACM0
+       sudo cat /dev/ttyACM0
 
 と打ち込みます.  すると画面上に角度が出力されます.  
 画面への出力を止める際にはCtrl + Cを押してください.  
 
+<img src="./image/角度出力.png" width="500">
 
 
 
