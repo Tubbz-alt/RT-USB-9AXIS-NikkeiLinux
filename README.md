@@ -54,27 +54,34 @@ zipファイルを適当な場所に解凍してファームウェア
 
 ### Windows環境
 
-1.	9軸センサモジュール上のタクトスイッチを押したままUSBケーブルを接続.このとき, モジュール上のLEDが弱く点灯します.
-2.	タクトスイッチから手を離します．
-3.	ブートローダーの起動まで待機(CRP DISABLEDという新しいDiskとして認識されます.)
-4.	もともとのfirmware.binを削除
-5.	新しい.binファイルをコピー
+1:	9軸センサモジュール上のタクトスイッチを押したままUSBケーブルを接続.このとき, モジュール上のLEDが弱く点灯します.   
+2:	タクトスイッチから手を離します．   
+3:	ブートローダーの起動まで待機(CRP DISABLEDという新しいDiskとして認識されます.)   
+4:	もともとのfirmware.binを削除   
+5:	新しい.binファイルをコピー   
 
 <img src="./image/ファーム書き込みwin.png" width="320">
 
 ### Linux環境
 
-1.　　センサモジュール上のタクトスイッチを押したままUSBケーブルを接続. このとき, モジュール上のLEDが弱く点灯します.
-2.    タクトスイッチから手を離します．
-3.    mountコマンドでマウント名を調べる.(CRP DISABLEDという名前)    
-      /dev/sdbのような名前のことが多いです.
-4.    mtoolsというコマンドをインストールする.    
+1:　　センサモジュール上のタクトスイッチを押したままUSBケーブルを接続. このとき, モジュール上のLEDが弱く点灯します.
+
+2:    タクトスイッチから手を離します．
+
+3:    mountコマンドでマウント名を調べる.(CRP DISABLEDという名前)    
+
+       /dev/sdbのような名前のことが多いです.
+
+4:    mtoolsというコマンドをインストールする.    
+
        sudo apt-get install mtools 
  
-5.    sudo mdel –i マウントされている場所 ::/firmware.bin
-       例 マウントされている場所が /dev/sdb だった場合    
-       sudo mdel -i /dev/sdb ::/firmware.bin
-6.    sudo mcopy –i マウントされている場所 新しいファイルの絶対path ::/
+5:    sudo mdel –i マウントされている場所 ::/firmware.bin
+
+       例 マウントされている場所が /dev/sdb だった場合      sudo mdel -i /dev/sdb ::/firmware.bin
+
+6:    sudo mcopy –i マウントされている場所 新しいファイルの絶対path ::/
+
        例 マウントされている場所が /dev/sdbでダウンロードしてきたファームウェアのパスが
        /home/hogehoge/NikkeiLinux_yaw_firm.binの場合    
        sudo mcopy -i /dev/sdb /home/hogehoge/NikkeiLinux_yaw_firm.bin ::/
