@@ -48,7 +48,7 @@ USB出力IMUセンサモジュールにはもともと9軸データを取得し�
 4.	もともとのfirmware.binを削除
 5.	新しい.binファイルをコピー
 
-<img src="./image/ファーム書き込みwin.png" width="240">
+<img src="./image/ファーム書き込みwin.png" width="320">
 
 ### Linux環境
 
