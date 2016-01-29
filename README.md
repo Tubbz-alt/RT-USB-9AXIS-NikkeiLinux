@@ -78,12 +78,14 @@ zipファイルを適当な場所に解凍してファームウェア
 5.    sudo mdel –i マウントされている場所 ::/firmware.bin
 
        例 マウントされている場所が /dev/sdb だった場合
+     
        sudo mdel -i /dev/sdb ::/firmware.bin
 
 6.    sudo mcopy –i マウントされている場所 新しいファイルの絶対path ::/
 
        例 マウントされている場所が /dev/sdbでダウンロードしてきたファームウェアのパスが
        /home/hogehoge/NikkeiLinux_yaw_firm.binの場合
+     
        sudo mcopy -i /dev/sdb /home/hogehoge/NikkeiLinux_yaw_firm.bin ::/
 
 ## ラズベリーパイでのセンサ値の出力読み取りについて
