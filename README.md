@@ -2,6 +2,16 @@
 
 <img src="./image/RT-USB-9AXIS-picture.png" width="240">
 
+## 注意
+
+本リポジトリは開発終了しました。
+[こちら](https://github.com/rt-net/RT-USB-9AXIS-00)のリポジトリに移行しています。
+
+USB出力9軸IMUセンサモジュールのVer2.0が販売中です。
+
+https://www.rt-net.jp/products/9axisimu2
+
+
 ## 概要
 
 本リポジトリは『Raspberry Pi で始めるかんたんロボット制作』で用いた
